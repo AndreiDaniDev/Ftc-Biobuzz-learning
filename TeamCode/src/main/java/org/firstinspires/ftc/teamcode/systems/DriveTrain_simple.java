@@ -7,25 +7,25 @@ import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 @Configurable
-public class DriveTrain {
+public class DriveTrain_simple {
     DcMotor frontLeftMotor, frontRightMotor;
     DcMotor backLeftMotor, backRightMotor;
-    public static double rpm =0.0;
+    public static double rpm = 0.0;
 
     ///  init function :) ///
-    public DriveTrain(HardwareMap hardwareMap){
+    public DriveTrain_simple(HardwareMap hardwareMap){
         /// init motors :) ///
-        frontLeftMotor = hardwareMap.dcMotor.get("FL");
-        frontRightMotor = hardwareMap.dcMotor.get("FR");
+        frontLeftMotor = hardwareMap.dcMotor.get("FLM");
+        frontRightMotor = hardwareMap.dcMotor.get("FRM");
 
-        backRightMotor = hardwareMap.dcMotor.get("BR");
-        backLeftMotor = hardwareMap.dcMotor.get("BL");
+        backRightMotor = hardwareMap.dcMotor.get("BRM");
+        backLeftMotor = hardwareMap.dcMotor.get("BLM");
 
-        frontLeftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
-        backLeftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
+        frontLeftMotor.setDirection(DcMotorSimple.Direction.FORWARD);
+        backLeftMotor.setDirection(DcMotorSimple.Direction.FORWARD);
 
-        frontRightMotor.setDirection(DcMotorSimple.Direction.FORWARD);
-        backRightMotor.setDirection(DcMotorSimple.Direction.FORWARD);
+        frontRightMotor.setDirection(DcMotorSimple.Direction.REVERSE);
+        backRightMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
         frontLeftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         frontRightMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
