@@ -2,10 +2,11 @@ package org.firstinspires.ftc.teamcode.teleop;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+
 import org.firstinspires.ftc.teamcode.systems.DriveTrain_pedro;
 
-@TeleOp(name = "TeleOP - Pedro - Robot Centric", group = "Linear OpMode")
-public class teleop_numa_pedro_robotcentric extends LinearOpMode {
+@TeleOp(name = "TeleOP - Pedro - Field Centric", group = "Linear OpMode")
+public class teleop_numa_pedro extends LinearOpMode {
 
     DriveTrain_pedro driveTrain;
 
@@ -21,7 +22,7 @@ public class teleop_numa_pedro_robotcentric extends LinearOpMode {
         if(isStopRequested()){ return; }
 
         for(; opModeIsActive(); ) {
-            driveTrain.updateRobotCentric(gamepad1);
+            driveTrain.updateFieldCentric(gamepad1);
         }
 
         return; /// i like it with this :)
