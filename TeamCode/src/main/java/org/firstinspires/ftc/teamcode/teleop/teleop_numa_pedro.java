@@ -22,6 +22,10 @@ public class teleop_numa_pedro extends LinearOpMode {
         if(isStopRequested()){ return; }
 
         for(; opModeIsActive(); ) {
+            telemetry.addData("pose x : ", driveTrain.follower.pose().x());
+            telemetry.addData("pose y : ", driveTrain.follower.pose().y());
+            telemetry.addData("heading : ", driveTrain.follower.pose().heading());
+            telemetry.update();
             driveTrain.updateFieldCentric(gamepad1);
         }
 
