@@ -27,14 +27,19 @@ public class DriveTrain_pedro {
     public static int half_pointx = 0;
 
     public double kp_align = 0.6;
+    public double turn_multiplier = 1.1;
+
+    public void resetPose(){
+        /// set positions and heading ///
+        follower.setX(0.0); follower.setY(0.0);
+        follower.setHeading(0.0);
+    }
 
     public DriveTrain_pedro(HardwareMap hardwareMap) {
         follower = Constants.create(hardwareMap);
         toggle_follow_target = false;
 
-        /// set positions and heading ///
-        follower.setX(0.0); follower.setY(0.0);
-        follower.setHeading(0.0);
+        resetPose(); /// reset pose ///
     }
 
     /// i don't know if this works, also i need to go get the target hive left and right ///
@@ -70,11 +75,13 @@ public class DriveTrain_pedro {
 
         if(toggle_follow_target){ updateTargetCentric(gamepad); return; }
 
+        double turn_value = turn_multiplier * (-gamepad.left_trigger + gamepad.right_trigger);
+
         /// super simple drive :) ///
         DrivePowers powers = ManualDrive.fieldCentric(
             -gamepad.left_stick_y,
             -gamepad.left_stick_x,
-            -gamepad.right_stick_x,
+            -turn_value,
             follower.pose().heading()
         );
 
