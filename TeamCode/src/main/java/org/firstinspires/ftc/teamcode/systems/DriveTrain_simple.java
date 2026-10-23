@@ -10,7 +10,6 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 public class DriveTrain_simple {
     DcMotor frontLeftMotor, frontRightMotor;
     DcMotor backLeftMotor, backRightMotor;
-    public static double rpm = 0.0;
 
     ///  init function :) ///
     public DriveTrain_simple(HardwareMap hardwareMap){
