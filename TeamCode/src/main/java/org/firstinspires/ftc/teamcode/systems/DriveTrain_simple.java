@@ -11,6 +11,8 @@ public class DriveTrain_simple {
     DcMotor frontLeftMotor, frontRightMotor;
     DcMotor backLeftMotor, backRightMotor;
 
+    public static double turn_multiplier = 1;
+
     ///  init function :) ///
     public DriveTrain_simple(HardwareMap hardwareMap){
         /// init motors :) ///
@@ -33,7 +35,7 @@ public class DriveTrain_simple {
     };
 
     public void updateDriveTrain(Gamepad gamepad1){
-        double xx = +gamepad1.left_stick_x * 1.1;
+        double xx = +gamepad1.left_stick_x * turn_multiplier;
         double yy = -gamepad1.left_stick_y;
 
         double rotatexx = gamepad1.right_stick_x;
