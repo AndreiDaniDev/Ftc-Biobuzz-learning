@@ -1,6 +1,6 @@
 repositories {
     mavenCentral()
-    maven { url 'https://repo.dairy.foundation/releases/'}
+    maven { url 'https://repo.dairy.foundation/releases'}
     maven { url 'https://mymaven.bylazar.com/releases'}
     maven { url 'https://jitpack.io'}
     google() // Needed for androidx
@@ -20,4 +20,6 @@ dependencies {
     implementation 'com.pedropathing:revhub:3.0.2'
     implementation 'com.pedropathing:tuning:1.0.1'
     implementation 'com.bylazar:fullpanels:1.0.17'
+//    implementation 'dev.frozenmilk.dairy:CachingHardware:<MAJ.MIN.ENG>'
+    implementation "dev.frozenmilk.dairy:CachingHardware:1.0.0"
 }
