@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.tricks;
+package org.firstinspires.ftc.teamcode.systems.helpers;
 
 public class MathTricks {
     public static double angleWrap(double angle) {

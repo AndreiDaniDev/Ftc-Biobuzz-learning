@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.tricks;
+package org.firstinspires.ftc.teamcode.systems.helpers;
 
 public class Point2D{
     public final double x, y;

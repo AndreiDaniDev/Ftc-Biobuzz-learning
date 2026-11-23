@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import org.firstinspires.ftc.teamcode.systems.achived.DriveTrain_simple;
 
 @TeleOp(name = "TeleOP - Numai Bile", group = "Linear OpMode")
-public class teleop_numa_bile extends LinearOpMode {
+public class Teleop_robot_centric_nono extends LinearOpMode {
 
     DriveTrain_simple driveTrain;
 

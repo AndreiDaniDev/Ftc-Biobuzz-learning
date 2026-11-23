@@ -18,10 +18,6 @@ public class DriveTrainPedro {
     public double turn_multiplier = 1.1;
 
     /// set positions and heading ///
-    public void resetPose(Pose starting_pose){
-        follower.setPose(starting_pose);
-    }
-
     public DriveTrainPedro(HardwareMap hardwareMap) {
         follower = Constants.create(hardwareMap);
     }
