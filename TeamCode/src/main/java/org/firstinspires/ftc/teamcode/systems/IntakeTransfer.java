@@ -13,7 +13,7 @@ import kotlin.collections.UCollectionsKt;
 @Configurable
 public class IntakeTransfer {
     public static CachingDcMotorEx motorIntake, motorTransfer;
-    public static CachingServo servoRampLeftt, servoRampRightt;
+    public static CachingServo servoRamp;
 
     /// angles for ramp ///
     public static double ramp_angle_low = 0.07;
@@ -36,8 +36,7 @@ public class IntakeTransfer {
         motorIntake = new CachingDcMotorEx(hardwareMap.get(DcMotorEx.class, "MINT"));
         motorTransfer = new CachingDcMotorEx(hardwareMap.get(DcMotorEx.class, "MTR"));
 
-        servoRampLeftt = new CachingServo(hardwareMap.get(Servo.class, "RampaLeft"));
-        servoRampRightt = new CachingServo(hardwareMap.get(Servo.class, "RampaRight"));
+        servoRamp = new CachingServo(hardwareMap.get(Servo.class, "Rampa"));
 
         motorIntake.setDirection(DcMotorSimple.Direction.REVERSE);
         motorTransfer.setDirection(DcMotorSimple.Direction.FORWARD);
@@ -66,14 +65,12 @@ public class IntakeTransfer {
 
     /// flower ramp methods ///
     public void rampLow(){
-        servoRampLeftt.setPosition(ramp_angle_low);
-        servoRampRightt.setPosition(ramp_angle_low);
+        servoRamp.setPosition(ramp_angle_low);
         collecting_flower = true;
     }
 
     public void rampHigh(){
-        servoRampLeftt.setPosition(ramp_angle_high);
-        servoRampRightt.setPosition(ramp_angle_high);
+        servoRamp.setPosition(ramp_angle_high);
         collecting_flower = false;
     }
 

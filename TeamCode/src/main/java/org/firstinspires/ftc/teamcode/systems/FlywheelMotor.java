@@ -13,7 +13,7 @@ import dev.frozenmilk.dairy.cachinghardware.CachingDcMotorEx;
 public class FlywheelMotor {
     private final CachingDcMotorEx motorShooter;
 
-    class Settings{
+    public class Settings{
         public String motor_name;
 
         public double min_shooter_rpm = 1380f;

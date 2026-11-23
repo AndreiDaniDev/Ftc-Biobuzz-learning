@@ -26,6 +26,8 @@ public class Teleop_Pedro_yesyes extends LinearOpMode {
 
         GlobalStates.runningState = GlobalStates.RunningState.TELEOP;
 
+        lilDash = new LittleDash(hardwareMap);
+
         waitForStart();
 
         if(isStopRequested()){ return; }
