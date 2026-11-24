@@ -24,7 +24,7 @@ public class LittleDash {
         turret_settings.servo_rightt_name = "Turela_right";
     };
 
-    static { /// init parameters for turret ///
+    static { /// init parameters for shooter ///
         shooter_settings.servo_gate_name = "Gate";
         shooter_settings.servo_hood_name = "Reglaj";
         shooter_settings.flywheel_settings.motor_name = "MSHT";
